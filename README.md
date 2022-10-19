@@ -1,4 +1,4 @@
-Try it [http://blog-pasadem.vercel.app](http://blog-pasadem.vercel.app)
+Try it [Blog](http://blog-pasadem.vercel.app)
 
 # Getting Started with Create React App
 

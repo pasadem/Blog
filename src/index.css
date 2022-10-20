@@ -80,6 +80,8 @@ form {
   background-color: blue;
   border: 1px solid primary-blue;
   border-radius: 6px;
- 
-  
+}
+
+.link {
+  text-decoration: none;
 }

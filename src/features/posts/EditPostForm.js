@@ -4,7 +4,7 @@ import { selectPostById, updatePost, deletePost } from "./postsSlice";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { selectAllUsers } from "../users/usersSlice";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 
 const EditPostForm = () => {
   const { postId } = useParams();
@@ -84,53 +84,66 @@ const EditPostForm = () => {
   };
 
   return (
-    <section>
-      <h2>Edit Post</h2>
-      <Form>
-        <Form.Group>
-          <Form.Label htmlFor="postTitle">Post Title:</Form.Label>
-          <Form.Control
-            type="text"
-            id="postTitle"
-            name="postTitle"
-            value={title}
-            onChange={onTitleChanged}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="postAuthor">Author:</Form.Label>
-          <Form.Select
-            id="postAuthor"
-            value={userId}
-            onChange={onAuthorChanged}
-          >
-            <option value=""></option>
-            {usersOptions}
-          </Form.Select>
-          <Form.Label htmlFor="postContent">Content:</Form.Label>
-        </Form.Group>
-        <Form.Group>
-        <Form.Control className="mb-3"
-          as="textarea"
-          rows={3}
-          id="postContent"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        </Form.Group>
-        <Button type="button" onClick={onSavePostClicked} disabled={!canSave}>
-          Save Post
-        </Button>
-        <Button
-          className="mt-3"
-          type="button"
-          onClick={onDeletePostClicked}
-        >
-          Delete Post
-        </Button>
-      </Form>
-    </section>
+    <div className="containerCard">
+      <Row>
+        <Col>
+          <h2>Edit Post</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form>
+            <Form.Group>
+              <Form.Label htmlFor="postTitle">Post Title:</Form.Label>
+              <Form.Control
+                type="text"
+                id="postTitle"
+                name="postTitle"
+                value={title}
+                onChange={onTitleChanged}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="postAuthor">Author:</Form.Label>
+              <Form.Select
+                id="postAuthor"
+                value={userId}
+                onChange={onAuthorChanged}
+              >
+                <option value=""></option>
+                {usersOptions}
+              </Form.Select>
+              <Form.Label htmlFor="postContent">Content:</Form.Label>
+            </Form.Group>
+            <Form.Group>
+              <Form.Control
+                className="mb-3"
+                as="textarea"
+                rows={3}
+                id="postContent"
+                name="postContent"
+                value={content}
+                onChange={onContentChanged}
+              />
+            </Form.Group>
+            <Button
+              type="button"
+              onClick={onSavePostClicked}
+              disabled={!canSave}
+            >
+              Save Post
+            </Button>
+            <Button
+              className="mt-3"
+              type="button"
+              onClick={onDeletePostClicked}
+            >
+              Delete Post
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

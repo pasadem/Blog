@@ -7,7 +7,7 @@ import ReactionButtons from "./ReactionButtons";
 
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 const SinglePostPage = () => {
   const { postId } = useParams();
@@ -23,7 +23,7 @@ const SinglePostPage = () => {
   }
 
   return (
-    <Container className="container">
+    <div className="containerCard">
       <Row>
         <h2>{post.title}</h2>
       </Row>
@@ -48,7 +48,7 @@ const SinglePostPage = () => {
           </Link>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

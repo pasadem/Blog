@@ -8,10 +8,10 @@ const PostsExcerpt = ({ post }) => {
   return (
     <Container className="containerCard">
       <Row>
-        <h2>{post.title}</h2>
+        <h2>{post.title.substring(0, 10)}...</h2>
       </Row>
       <Row>
-        <Col className="col-auto pb-3 excerpt">{post.body.substring(0, 75)}...</Col>
+        <Col className="col-auto pb-3 excerpt">{post.body.substring(0, 50)}...</Col>
       </Row>
       <Row className="postCredit">
         <Col className="col-auto pb-3">

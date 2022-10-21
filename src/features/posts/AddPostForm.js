@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addNewPost } from "../postsSlice";
-import { selectAllUsers } from "../../users/usersSlice";
+import { addNewPost } from "./postsSlice";
+import { selectAllUsers } from "../users/usersSlice";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 
@@ -50,7 +50,7 @@ const AddPostForm = () => {
   ));
 
   return (
-    <section>
+    <div className="containerCard">
       <h2>Add a New Post</h2>
       <Form>
         <Form.Group>
@@ -89,7 +89,7 @@ const AddPostForm = () => {
           Save Post
         </Button>
       </Form>
-    </section>
+    </div>
   );
 };
 export default AddPostForm;
